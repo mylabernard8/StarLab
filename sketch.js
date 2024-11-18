@@ -9,22 +9,13 @@ function setup() {
   noStroke() 
 }
 
+
+// Task 2
 function draw() {
-  background(bg) 
-  // Task 2: create an object, and an accompanying function, that allows for 
-  //   "breathing a variable" (having it fluctuate within a given range by
-  //   a given step). 
-  // Alternate Task 2: implement breathing of the inner and outer radii
-  //   through the use of trigonometric functions (like sin or cos). Remember 
-  //   that these functions, by default, are in radians [0,TWO_PI]
-  drawStar()
+  background(bg);
+  radiusBreather.update(); // Update the radius
+  drawStar(width / 2, height / 2, radiusBreather.current, radiusBreather.current * 1.5, 7);
 }
-
-
-
-
-
-
 
 
 
@@ -44,11 +35,6 @@ function drawStar(mx = width / 2, my = height / 2, ir = 50, or = 100, numberOfSi
   }
   endShape(CLOSE);
 }
-
-
-
-
-
 
 
 
